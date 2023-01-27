@@ -1,3 +1,4 @@
+package PhoneBook;
 public class StringNode{
     private Node front;
  // constructs an empty list
@@ -20,7 +21,10 @@ public class StringNode{
         int index=0;
         Node current= front;
         while(current!=null){
-        if(current.data.equals(info)){
+            String data=current.data;
+            int coma=data.indexOf(",");
+            String subData=data.substring(0, coma);// gets the first Name
+            if(subData.equals(info)){
             return index;
         }
         index++;
@@ -54,7 +58,7 @@ public class StringNode{
 
     }
     //insert node at given index with given data
-    public void add(int index,String info){
+    public void addAnyWhere(int index,String info){
         //front of list
         if(index==0){
             front = new Node(info,front);
