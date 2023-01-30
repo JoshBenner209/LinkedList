@@ -5,6 +5,7 @@ public class StringNode{
     public StringNode(){
         front = null;
     }
+    
     //size of list is=count
     public int getsize(){
         int count=0;
@@ -22,15 +23,16 @@ public class StringNode{
         Node current= front;
         while(current!=null){
             String data=current.data;
-            int coma=data.indexOf(",");
-            String subData=data.substring(0, coma);// gets the first Name
-            if(subData.equals(info)){
+            int coma1=data.indexOf(","); // stop search at comma
+            String subData1=data.substring(0, coma1);// get name
+            String name= subData1;
+            if(name.equals(info)){ // if found return position
             return index;
         }
         index++;
         current= current.next;
         }
-        return -1;
+        return -1; // not found. Return -1
     }
     //enter an index number and return data
     public String getData(int index){
@@ -50,7 +52,7 @@ public class StringNode{
             front=new Node(info);
         }else{
             Node current = front;
-            while(current!=null){
+            while(current.next!=null){
                 current=current.next;
             }
             current.next=new Node(info);
@@ -80,13 +82,12 @@ public class StringNode{
         if(front ==null){
             return"[]";
         }else{
-            String result= "["+front.data;
+            String result= "["+front.data+"]\n";
             Node current = front.next;
             while(current!=null){
-                result+=", "+current.data;
+                result+="[ "+current.data+" ]\n";
                 current=current.next;
             }
-            result+="]";
             return result;
         }
     }
