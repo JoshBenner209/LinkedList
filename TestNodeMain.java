@@ -25,8 +25,11 @@ public class TestNodeMain{
             int choice =scan.nextInt();
             // if no one is in the list make user add to list
             if(list.getsize()==0 && choice!=1){
-                System.out.println("must add someone to book first");
+               if(choice!=0){ System.out.println("must add someone to book first");
                 choice=10;
+                }else{
+                    break;
+                }
             }
             switch(choice){
                 
@@ -62,9 +65,7 @@ public class TestNodeMain{
                     add=false;
                 break;
                 default://no key recongized 
-                if(choice!=10){
-                System.out.println("please select different option");
-                }
+                    System.out.println("please select different option");
                 break;
             }
         }
