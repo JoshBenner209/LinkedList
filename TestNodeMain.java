@@ -24,13 +24,10 @@ public class TestNodeMain{
             " by name\n 5 to print phone book\n 6 to edit info\n 0 to exit\n");
             int choice =scan.nextInt();
             // if no one is in the list make user add to list
-            if(list.getsize()==0 && choice!=1){
-               if(choice!=0){ System.out.println("must add someone to book first");
+            if(list.getsize()==0 && choice!=1 && choice!=0){
+               System.out.println("must add someone to book first");
                 choice=10;
-                }else{
-                    break;
                 }
-            }
             switch(choice){
                 
                 case 1://add person to book
