@@ -9,8 +9,8 @@ package PhoneBook;
  */
 
 public class Node{
-	public String data;
-	public Node next;
+	protected String data;
+	protected Node next;
 	//has data and pointer
 	public Node(String data,Node next ){
 		this.data=data;
@@ -24,5 +24,6 @@ public class Node{
 	public Node (String data){
 		this(data,null);
 	}
+
 	
 	}
